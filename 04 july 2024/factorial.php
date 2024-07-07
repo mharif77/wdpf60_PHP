@@ -7,21 +7,21 @@
 </head>
 <body>
 <?php
-    if(isset($_post['submit'])){
+    if(isset($_POST['submit'])){
 
        //  print_r($_post);
-        echo $_POST['number']; 
+        // echo $_POST['number']; 
         $num = $_POST['number'];
-        echo  myfunction ($num);
+        echo  myfunction($num);
 
     }
-    function  myfunction ($num){
+    function  myfunction($num){
         
         $fact = 1;
-        for( $i = $num; $i>= 1; $i--){
+        for( $i = $num; $i>=1; $i--){
             $fact = $fact * $i;
         }
-            return $num . 'the factorial number is' . $fact;
+            return $num . ' the factorial number is' . $fact;
     }
 ?>
 
