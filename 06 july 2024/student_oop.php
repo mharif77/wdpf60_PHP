@@ -21,9 +21,6 @@ class student{
         $this->datas = $file;
         $this->arraydata = file( $this->datas);
 }
-
-
-
 public function show_result($st){
     foreach( $this->arraydata as $data){
         $line =  explode("|" , $data);
@@ -33,8 +30,7 @@ public function show_result($st){
            name :  $name <br>
            score : $score <br>
            result : $result";
-            
-        }
+             }
     }
     return   $output;
 }
@@ -42,12 +38,7 @@ public function show_result($st){
  
 ?>
     
-
-    
-   
-        
-
-    <form action="" method="post">
+<form action="" method="post">
         <select name="st" id="">
             <option value="">choose one</option>
             <option value="1">arif</option>
