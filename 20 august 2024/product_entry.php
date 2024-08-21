@@ -9,7 +9,7 @@
 
 <body>
     <h3>Product Entry</h3>
-    <!-- <a href="all_products.php">product list</a> -->
+
     <?php
     if (isset($_POST['submit'])) {
         extract($_POST);
@@ -42,7 +42,11 @@
         <input type="number" name="quantity" placeholder="Enter product quantity"><br><br>
         <input type="submit" name="submit" value="SUBMIT">
 
-    </form>
+    </form><br><br>
+
+    <a href="all_products.php">product list</a>
+
+
 
 
 
