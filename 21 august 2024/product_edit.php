@@ -12,6 +12,11 @@
     <h3>Product Edit</h3>
 
     <?php
+
+    $sql = "SELECT * FROM catagories";
+    $catag = $db->query($sql);
+
+
     $id = $_REQUEST['id'];
 
 
@@ -20,7 +25,7 @@
 
     if (isset($_POST['update'])) {
         extract($_POST);
-        $sql = "UPDATE products SET product_name = '$name', product_details = '$details', product_price = '$price',product_quantity = '$quantity ' WHERE id = '$id'";
+        $sql = "UPDATE products SET product_name = '$name', product_details = '$details', product_price = '$price',product_quantity = '$quantity ', product_catagory = '$catagory' WHERE id = '$id'";
 
 
 
@@ -28,10 +33,10 @@
 
         echo $db->affected_rows;
 
-        if ($db->affected_rows) {
-            echo "Successfully updated";
-        } else {
+        if ($db->error) {
             echo "Failed";
+        } else {
+            echo "Successfully";
         }
 
     }
@@ -54,6 +59,18 @@
         product quantity : <br>
         <input type="number" name="quantity" placeholder="Enter product quantity"
             value="<?php echo $row->product_quantity; ?>"><br><br>
+        <select name="catagory" id="">
+            <option value="">select one</option>
+            <?php
+            while ($cat = $catag->fetch_assoc()) { ?>
+                <option value="<?php echo $cat['cat_id'] ?>" <?php echo $row->product_catagory == $cat['cat_id'] ? "selected" : " "; ?>><?php echo $cat['name'] ?></option>
+
+                <?php
+
+            }
+            ?>
+
+        </select><br>
         <input type="submit" name="update" value="UPDATE">
         <input type="hidden" name="id" value="<?php echo $id ?>">
 

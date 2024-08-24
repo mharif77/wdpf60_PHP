@@ -25,12 +25,12 @@
 
         $result = $db->query($sql);
 
-        echo $db->affected_rows;
+        // echo $db->affected_rows;
 
-        if ($db->affected_rows) {
-            echo "Successfully Added";
+        if ($db->error) {
+            echo " Failed";
         } else {
-            echo "Failed";
+            echo "Successfully";
         }
 
     }
