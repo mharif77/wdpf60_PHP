@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-<h1>answer to the question no : 3</h1>
+<h1>answer to the question no : 4</h1>
     <h3>all products (product_above_6000_price)</h3>
     <?php 
      $data = $mysqli->query("SELECT * FROM  product_above_6000_price ");
